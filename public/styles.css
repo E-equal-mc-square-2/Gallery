@@ -1,0 +1,79 @@
+:root {
+  --bg: #0d0d1a;
+  --fg: #e0d6ff;
+  --neon: #b967ff;
+  --glow: 0 0 10px #b967ff, 0 0 20px #9d4edd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0 30px;
+  font-size: 2.5rem;
+  text-shadow: var(--glow);
+  letter-spacing: 2px;
+}
+
+.latest {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.latest img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--glow);
+  border: 2px solid var(--neon);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(185, 103, 255, 0.3);
+}
+
+.grid img:hover {
+  transform: scale(1.03);
+  box-shadow: var(--glow);
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
